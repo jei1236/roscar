@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"doint" [label="doint"];
+"disk" [label="disk"];
+"llun" [label="llun"];
+"rlun" [label="rlun"];
+"wfrontlun" [label="wfrontlun"];
+"wbacklun" [label="wbacklun"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"doint" -> "dodisk" [label="xyz: 0 0 0.055 \nrpy: 0 -0 0"]
+"dodisk" -> "disk"
+"disk" -> "disklun1" [label="xyz: 0 0.1 -0.0225 \nrpy: 0 -0 0"]
+"disklun1" -> "llun"
+"disk" -> "disklun2" [label="xyz: 0 -0.1 -0.0225 \nrpy: 0 -0 0"]
+"disklun2" -> "rlun"
+"disk" -> "diskwlun1" [label="xyz: 0.0925 0 -0.0475 \nrpy: 0 -0 0"]
+"diskwlun1" -> "wfrontlun"
+"disk" -> "diskwlun2" [label="xyz: -0.0925 0 -0.0475 \nrpy: 0 -0 0"]
+"diskwlun2" -> "wbacklun"
+}

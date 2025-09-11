@@ -1,0 +1,28 @@
+<!--设置机器人不同部件 -->
+<robot name="mycar">
+    <link name="base_link">
+    <!--可视化标签-->
+        <visual>
+            <!--形状-->
+            <geometry>
+            <!--立方体-->
+            <!-- <box size="0.3 0.2 0.2" /> -->
+            <!--圆柱-->
+            <!-- <cylinder radius="0.1" length="1"/> -->
+            <!--圆-->
+            <!-- <sphere radius="0.45"/> -->
+            <!--皮肤-->
+            <mesh filename="package://urdf01_rviz/meshes/autolabor_mini.stl"/>
+            </geometry>
+            <!--偏移量和倾斜角-->
+            <!--xyz设置在xyz上偏移量-->
+            <!--rpy设置倾斜角-->
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <!--颜色-->
+            <material name="black">
+            <!--rgba=红绿蓝权重值与透明度 (每个权重值以及透明度取值[0,1])-->
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+</robot>

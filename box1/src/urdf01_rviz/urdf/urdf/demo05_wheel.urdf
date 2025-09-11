@@ -1,0 +1,100 @@
+<robot name="mycar">
+    <!--支撑点-->
+    <link name="doint">
+        <visual>
+            <geometry>
+                <sphere radius="0.0001"/>
+            </geometry>
+        </visual>
+    </link>
+    <!--圆盘 0.1 0.08-->
+    <link name="disk">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.08"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="blue">
+                <color rgba="0 0 1.0 0.5" />
+            </material>
+        </visual>
+    </link>
+    <!--底盘节点-->
+    <joint name="dodisk" type="fixed">
+        <parent link="doint"/>
+        <child link="disk"/>
+        <origin xyz="0 0 0.055"/>
+    </joint>
+    <!--两个驱动轮-->
+    <link name="llun">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5708 0 0" />
+            <material name="black">
+                <color rgba="0 0 0 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="rlun">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+            <material name="black">
+                <color rgba="0 0 0 1" />
+            </material>
+        </visual>
+    </link>
+    <!--驱动轮节点-->
+    <joint name="disklun1" type="continuous">
+        <parent link="disk"/>
+        <child link="llun"/>
+        <origin xyz="0 0.1 -0.0225"/>
+        <axis xyz="0 1 0" />
+    </joint>
+     <joint name="disklun2" type="continuous">
+        <parent link="disk"/>
+        <child link="rlun"/>
+        <origin xyz="0 -0.1 -0.0225"/>
+        <axis xyz="0 1 0" />
+    </joint>
+    <!--两个万向论-->
+    <link name="wfrontlun">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="black">
+                <color rgba="0 0 0 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="wbacklun">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="black">
+                <color rgba="0 0 0 1" />
+            </material>
+        </visual>
+    </link>
+    <!--万向轮节点-->
+    <joint name="diskwlun1" type="continuous">
+        <parent link="disk"/>
+        <child link="wfrontlun"/>
+        <origin xyz="0.0925 0 -0.0475"/>
+        <axis xyz="1 1 1" />
+    </joint>
+     <joint name="diskwlun2" type="continuous">
+        <parent link="disk"/>
+        <child link="wbacklun"/>
+        <origin xyz="-0.0925 0 -0.0475"/>
+        <axis xyz="1 1 1" />
+    </joint>
+</robot>
