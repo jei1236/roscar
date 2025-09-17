@@ -1,2 +1,2 @@
-
--DCATKIN_DEVEL_PREFIX=/home/h/work/box1/devel -DCMAKE_INSTALL_PREFIX=/home/h/work/box1/install -G Unix Makefiles
+urdf01_rviz:urdf02_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/h/my_project/box1/devel -DCMAKE_INSTALL_PREFIX=/home/h/my_project/box1/install -G Unix Makefiles
