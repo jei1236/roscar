@@ -8,6 +8,7 @@
     <xacro:property name="support_radius" value="0.01" /> <!-- 支架半径 -->
     <xacro:property name="support_x" value="0.0" /> <!-- 支架安装的x坐标 -->
     <xacro:property name="support_y" value="0.0" /> <!-- 支架安装的y坐标 -->
+    <xacro:property name="support_z" value="${base_link_length / 2 + support_length / 2}" /> <!-- 支架安装的z坐标:底盘高度 / 2 + 支架高度 / 2  -->
 
     <xacro:property name="support_m" value="0.02" /> <!-- 支架质量 -->
 
