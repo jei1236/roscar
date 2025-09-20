@@ -7,4 +7,6 @@
     <xacro:include filename="demo07_laser.xacro" />
     <xacro:include filename="move.xacro" />
     <xacro:include filename="laser.xacro" />
+    <xacro:include filename="camera.xacro" />
+    <xacro:include filename="kinect.xacro" />
 </robot>
